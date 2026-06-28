@@ -26,7 +26,7 @@ test.describe("Login Test", () => {
 
     const products = await page.locator('[data-test*="-title-link"]').all();
 
-    expect(products.length).toBe(7);
+    expect(products.length).toBe(6);
 
     const addToCartButtons = await page
       .locator('[data-test*="add-to-cart"]')
@@ -52,7 +52,7 @@ test.describe("Login Test", () => {
 
 
     await page.locator('[data-test="shopping-cart-link"]').click();
-    await expect(page.locator('[data-test="title"]')).toContainText('Your Cart2');
+    await expect(page.locator('[data-test="title"]')).toContainText('Your Cart');
 
     expect(selectedProductName).not.toBeNull();
     await expect(page.locator('[data-test="inventory-item-name"]')).toContainText(selectedProductName!);
